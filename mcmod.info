@@ -1,0 +1,18 @@
+[
+{
+  "modid": "LaserReflection",
+  "name": "Mining Laser Reflections",
+  "description": "Logic Based Add-on, allows laser beams to reflect off of specific surfaces",
+  "version": "1.0",
+  "mcversion": "1.6.4",
+  "logoFile": "",
+  "url": "http://lazerz.agkz.me/",
+  "updateUrl": "",
+  "authors": ["AGKz"],
+  "credits": "",
+  "parent": "IC2",
+  "screenshots": [],
+  "requiredMods": [ "Forge", "IC2" ],
+  "dependencies": ["IC2"]
+}
+]
