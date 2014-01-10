@@ -16,7 +16,7 @@ public class ReflectionLaserEvent {
 		
 		int blockID = world.getBlockId(x, y, z);
 		
-		if (!(world.provider.dimensionId > 0) && blockID == Block.obsidian.blockID) 
+		if (LaserReflection.rConfig.shouldLightPortal && !(world.provider.dimensionId > 0) && blockID == Block.obsidian.blockID) 
 			LaserReflection.trySidesForPortal(world, x, y, z);
 		
 		IdMeta blockIdMeta = new IdMeta(blockID, world.getBlockMetadata(x, y, z));
@@ -28,9 +28,9 @@ public class ReflectionLaserEvent {
 			EntityMiningLaser laser = (EntityMiningLaser)event.lasershot;
 			int side  = event.side;
 			
-			double newMotionX = side == 4 || side == 5 ? laser.motionX*-1 : laser.motionX;
 			double newMotionY = side == 0 || side == 1 ? laser.motionY*-1 : laser.motionY;
 			double newMotionZ = side == 2 || side == 3 ? laser.motionZ*-1 : laser.motionZ;
+			double newMotionX = side == 4 || side == 5 ? laser.motionX*-1 : laser.motionX;
 			
 			laser.setLaserHeading(newMotionX, newMotionY, newMotionZ, 0.9D);
 			
